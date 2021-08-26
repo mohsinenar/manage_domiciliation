@@ -125,7 +125,7 @@
     <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
     <menuitem id="manage_menu_root" name="manage" sequence="0" />
     <!-- This Menu Item must have a parent and an action -->
-    <menuitem id="manage_company_menu_act" name="Les sociétés" parent="manage_menu_root" action="manage_company_action" sequence="2" />
+    <menuitem id="manage_company_menu_act" name="Sociétés" parent="manage_menu_root" action="manage_company_action" sequence="2" />
   </data>
 
 

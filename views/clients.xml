@@ -92,9 +92,9 @@
     </record>
 
     <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
-    <menuitem id="manage_menu_root" name="manage" sequence="1" />
+    <menuitem id="manage_menu_root" name="DOM" sequence="1" />
     <!-- This Menu Item must have a parent and an action -->
-    <menuitem id="manage_client_menu_act" name="Mes clients" parent="manage_menu_root" action="manage_client_action" sequence="1" />
+    <menuitem id="manage_client_menu_act" name="Clients" parent="manage_menu_root" action="manage_client_action" sequence="1" />
   </data>
 
 

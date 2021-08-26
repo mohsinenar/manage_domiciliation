@@ -9,15 +9,15 @@ class Client(models.Model):
     _rec_name='name'
 
     name = fields.Char(required=True,string="Nom")
-    email = fields.Char(required=False,string="e-mail")
+    email = fields.Char(required=False,string="E-mail")
     Cin = fields.Char(required=True,string="C.I.N")
-    Phone = fields.Char(required=False,string="Telephone")
+    Phone = fields.Char(required=False,string="Téléphone")
     Adress = fields.Text(required=False,string="Adresse")
-    company_ids = fields.One2many('manage.company', 'client_id', string='sociétés')
+    company_ids = fields.One2many('manage.company', 'client_id', string='Sociétés')
     company_count = fields.Integer(compute='_compute_company_count', string='Nombre de sociétés')
-    domiciliation_ids = fields.One2many('manage.domiciliation','client_id', string='domiciliations')
+    domiciliation_ids = fields.One2many('manage.domiciliation','client_id', string='Domiciliations')
     domiciliation_count = fields.Integer(string='Nombre de domiciliations',compute='_compute_domiciliation_count')
-    affiliate_id = fields.Many2one(comodel_name='manage.affiliate', string='affiliate')
+    affiliate_id = fields.Many2one(comodel_name='manage.affiliate', string='Source')
     
     # REFRAL 
     @api.depends('company_ids')

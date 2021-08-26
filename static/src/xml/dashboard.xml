@@ -12,7 +12,7 @@
 
                 <div class="col-md-12">
                     <h2 class="text-center">
-                        companies
+                        
                     </h2>
                     <div class="Companies"></div>
                 </div>
@@ -74,13 +74,13 @@
             List des clients
         </button>
         <button type="button" class="btn btn-success add_company ">
-            Ajouter un societes
+            Ajouter une société
         </button>
         <button type="button" class="btn btn-success list_companies ">
-            List des societes
+            List des sociétés
         </button>
         <hr />
-        <h2 class="text-center"> Liste des entreprises</h2>
+        <h2 class="text-center"> Liste des sociétés (se termine dans 15 jours)</h2>
         <table class="table table-bordered table-hover table-striped">
             <thead>
                 <tr>

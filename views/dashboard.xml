@@ -17,7 +17,7 @@
     </record>
     
 
-    <menuitem sequence="0" id="manage_dashboard_menu_act" name="Dashbord" parent="manage_menu_root" action="manage_action_dashboard" />
+    <menuitem sequence="0" id="manage_dashboard_menu_act" name="Tableau de Bord" parent="manage_menu_root" action="manage_action_dashboard" />
 
 
 </odoo>

@@ -10,11 +10,11 @@ class Domiciliation(models.Model):
     _rec_name = "referance"
 
 
-    referance = fields.Char(string='Reference', required=True, copy=False, readonly=True,index=True, default="New")
-    Date_debut = fields.Date(string="Date debut",required=True,default=fields.Datetime.now())
+    referance = fields.Char(string='Réference', required=True, copy=False, readonly=True,index=True, default="New")
+    Date_debut = fields.Date(string="Date début",required=True,default=fields.Datetime.now())
     Date_fin = fields.Date(string="Date Fin",compute='_compute_Date_fin')
-    adresse = fields.Text(string='adresse',required=True)
-    duree = fields.Integer(string='duree',default=6,required=True)
+    adresse = fields.Text(string='Adresse',required=True)
+    duree = fields.Integer(string='Durée',default=6,required=True)
     prix = fields.Monetary(string="Prix/mois",currency_field="currency_id")
     prix_total = fields.Monetary(string="Total",compute='_compute_prix_total',currency_field="currency_id")
     company_id = fields.Many2one('manage.company', string='société',required=True,readonly=True)
