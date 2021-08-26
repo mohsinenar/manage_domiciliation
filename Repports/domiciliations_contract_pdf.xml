@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="domiciliations_contract_pdf">
+		<t t-call="web.html_container">
+			<t t-foreach="docs" t-as="doc">
+				<t t-call="web.external_layout">
+					<div style="padding:10px">
+						<h1 class="text-center">
+							<b>ATTESTATION DE DOMICILIATION</b>
+						</h1>
+						<h4 class="text-center">En application de l’article L-123-11-1 du Code de Commerce</h4>
+						<br />
+						<p>
+							Je soussigné :
+							<b>
+								<t t-esc="doc.client_id.name" />
+							</b>
+						</p>
+						<br />
+						<p>Agissant en qualité de représentant de la société:</p>
+						<br />
+
+						<p>
+							<ul>
+								<li>
+									Dénomination:
+									<b>
+										<t t-esc="doc.name" />
+									</b>
+								</li>
+								<li>
+									Forme juridique:
+									<b>
+										<t t-esc="doc.forme" />
+									</b>
+								</li>
+								<li>
+									Siège social:
+									<b>
+										<t t-esc="doc.last_domiciliation_id.adresse" />
+									</b>
+								</li>
+							</ul>
+						</p>
+						<p>Déclare</p>
+						<p>
+							<ul>
+								<li>Recourir aux dispositions de l’alinéa 2 de l’article L 123-11-1 du Code de Commerce et installer provisoirement le siège social de ma société à mon domicile pour une durée ne pouvant ni excéder 5 ans à compter de sa création, ni dépasser le terme légal, contractuel ou judiciaire relatif à l’occupation des locaux.
+								</li>
+								<li>Installer le siège social de ma société à mon domicile sans limitation de durée, aucune disposition législative ou stipulation contractuelle contraire relative à l’occupation de mes locaux ne s’y opposant.
+								</li>
+							</ul>
+						</p>
+						<p>Fait é : (indiquer fa ville) </p>
+						<p>Le (indiquer la date) </p>
+						<p><i>Signature:</i></p>
+					</div>
+				</t>
+			</t>
+		</t>
+	</template>
+</odoo>

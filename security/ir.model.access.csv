@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_ahmed_ahmed,ahmed.ahmed,model_ahmed_ahmed,base.group_user,1,1,1,1
+access_manage_admin_client,access.manage.client,model_manage_client,group_manage_admin,1,1,1,1
+access_manage_admin_company,access.manage.company,model_manage_company,group_manage_admin,1,1,1,1
+access_manage_admin_domiciliation,access.manage.domiciliation,model_manage_domiciliation,group_manage_admin,1,1,1,1
+access_manage_admin_affiliate,access.manage.affiliate,model_manage_affiliate,group_manage_admin,1,1,1,1

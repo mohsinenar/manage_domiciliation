@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <data>
+        <template id="assets_backend_dashboard" name="dashboard" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/manage/static/src/js/dashboard.js" />
+            </xpath>
+        </template>
+    </data>
+
+    <record id="manage_action_dashboard" model="ir.actions.client">
+        <field name="name">dashboard1</field>
+        <field name="tag">my_dashboard</field>
+        <field name="target">current</field>
+    </record>
+    
+
+    <menuitem sequence="0" id="manage_dashboard_menu_act" name="Dashbord" parent="manage_menu_root" action="manage_action_dashboard" />
+
+
+</odoo>

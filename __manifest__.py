@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "ahmed",
+    'name': "manage",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -24,10 +24,17 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'security/security.xml',
+        'security/ir.model.access.csv',
+        'views/config.xml',
+        'views/clients.xml',
+        'views/company.xml',
+        'views/dashboard.xml',
+        'views/domiciliation.xml',
+        'Repports/reports.xml',
+        'Repports/domiciliations_contract_pdf.xml',
     ],
+    'qweb': ["static/src/xml/dashboard.xml"],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',

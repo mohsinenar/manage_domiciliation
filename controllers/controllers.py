@@ -2,20 +2,20 @@
 # from odoo import http
 
 
-# class Ahmed(http.Controller):
-#     @http.route('/ahmed/ahmed/', auth='public')
+# class Manage(http.Controller):
+#     @http.route('/manage/manage/', auth='public')
 #     def index(self, **kw):
 #         return "Hello, world"
 
-#     @http.route('/ahmed/ahmed/objects/', auth='public')
+#     @http.route('/manage/manage/objects/', auth='public')
 #     def list(self, **kw):
-#         return http.request.render('ahmed.listing', {
-#             'root': '/ahmed/ahmed',
-#             'objects': http.request.env['ahmed.ahmed'].search([]),
+#         return http.request.render('manage.listing', {
+#             'root': '/manage/manage',
+#             'objects': http.request.env['manage.manage'].search([]),
 #         })
 
-#     @http.route('/ahmed/ahmed/objects/<model("ahmed.ahmed"):obj>/', auth='public')
+#     @http.route('/manage/manage/objects/<model("manage.manage"):obj>/', auth='public')
 #     def object(self, obj, **kw):
-#         return http.request.render('ahmed.object', {
+#         return http.request.render('manage.object', {
 #             'object': obj
 #         })

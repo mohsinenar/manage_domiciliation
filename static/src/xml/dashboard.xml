@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="manage.HrdashboardMain">
+        <div class="container">
+            <div class="row" style="padding-top:20px">
+                <!-- <div class="col-md-6">
+                    <h2 class="text-center">
+                        Clients
+                    </h2>
+                    <div class="Clients"></div>
+                </div> -->
+
+                <div class="col-md-12">
+                    <h2 class="text-center">
+                        companies
+                    </h2>
+                    <div class="Companies"></div>
+                </div>
+
+            </div>
+        </div>
+    </t>
+
+    <t t-name="Clientsdashboard">
+        <button type="button" class="btn btn-success add_client ">
+            Ajouter un client
+        </button>
+        <button type="button" class="btn btn-success list_client ">
+            List des clients
+        </button>
+        <button type="button" class="btn btn-success add_company ">
+            Ajouter un societes
+        </button>
+        <button type="button" class="btn btn-success list_companies ">
+            List des societes
+        </button>
+        <hr />
+        <h2>Top Companies</h2>
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">nom</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">C.I.N</th>
+                </tr>
+            </thead>
+            <tbody>
+                <t t-foreach="widget.clients" t-as="client">
+                    <tr class="table-warning">
+                        <th scope="row">
+                            <t t-esc="client.id" />
+                        </th>
+                        <td>
+                            <t t-esc="client.name" />
+                        </td>
+                        <td>
+                            <t t-esc="client.email" />
+                        </td>
+                        <td>
+                            <t t-esc="client.Phone" />
+                        </td>
+                    </tr>
+                </t>
+            </tbody>
+        </table>
+    </t>
+
+    <t t-name="CompaniesDashboard">
+        <button type="button" class="btn btn-success add_client ">
+            Ajouter un client
+        </button>
+        <button type="button" class="btn btn-success list_client ">
+            List des clients
+        </button>
+        <button type="button" class="btn btn-success add_company ">
+            Ajouter un societes
+        </button>
+        <button type="button" class="btn btn-success list_companies ">
+            List des societes
+        </button>
+        <hr />
+        <h2 class="text-center"> Liste des entreprises</h2>
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#REF</th>
+                    <th scope="col">client</th>
+                    <th scope="col">Company</th>
+                    <th scope="col">RC</th>
+                    <th scope="col">IF</th>
+                    <th scope="col">rest_days</th>
+                    <th scope="col">Date_fin</th>
+                </tr>
+            </thead>
+            <tbody>
+                <t t-foreach="widget.companies" t-as="company">
+                    <tr class="table-warning">
+                        <th scope="row">
+                            <t t-esc="company.last_domiciliation_id" />
+                        </th>
+                        <td>
+                            <t t-esc="company.client_id" />
+                        </td>
+                        <td>
+                            <t t-esc="company.name" />
+                        </td>
+                        <td>
+                            <t t-esc="company.company_rc" />
+                        </td>
+                        <td>
+                            <t t-esc="company.company_if" />
+                        </td>
+                        <td>
+                            <t t-esc="company.rest_days" />
+                        </td>
+                        <td>
+                            <t t-esc="company.date_fin" />
+                        </td>
+                    </tr>
+                </t>
+            </tbody>
+        </table>
+    </t>
+
+</templates>

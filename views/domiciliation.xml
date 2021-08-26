@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <data>
+
+    <!-- manage.domiciliation form view -->
+    <record id="manage_domiciliation_view_form" model="ir.ui.view">
+      <field name="name">manage.domiciliation.view.form</field>
+      <field name="model">manage.domiciliation</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <header>
+            <!-- <button name="cancel" type="object" attrs="{'invisible': [('is_cancled', '=',True)]}" class="btn-success" string="résilié" /> -->
+            <!-- <button name="cancel" type="object" class="btn-info" string="Print" /> -->
+          </header>
+          <sheet>
+            <widget name="web_ribbon" bg_color="bg-danger" title="résilié" attrs="{'invisible': [('is_cancled', '=',False)]}" />
+            <h2>
+              <field name="referance" />
+            </h2>
+            <group>
+              <group>
+                <field name="company_id" readonly="1" />
+                <field name="currency_id" invisible="1" />
+                <field name="Date_debut" />
+                <field name="Date_fin" />
+                <field name="is_cancled" invisible="1" />
+
+              </group>
+              <group>
+                <field name="prix" />
+                <field name="duree" />
+                <field name="adresse" />
+                <field name="cancled_in" attrs="{'invisible': [('is_cancled', '=',False)]}" />
+              </group>
+            </group>
+            <h1><group><field name="prix_total"/></group></h1>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- manage.domiciliation tree view -->
+    <record id="manage_domiciliation_view_tree" model="ir.ui.view">
+      <field name="name">manage.domiciliation.view.tree</field>
+      <field name="model">manage.domiciliation</field>
+      <field name="arch" type="xml">
+        <tree decoration-warning="rest_days &#x3C; 15" decoration-danger="rest_days == 0" decoration-success="rest_days &#x3E; 15" decoration-info="status == 'closed'">
+          <field name="Date_debut" />
+          <field name="Date_fin" />
+          <field name="prix" />
+          <field name="duree" />
+          <field name="company_id" />
+          <field name="client_id" />
+          <field name="rest_days" />
+          <field name="status" />
+        </tree>
+      </field>
+    </record>
+
+    <!-- manage.domiciliation kanban view -->
+    <record id="model_name_view_kanban" model="ir.ui.view">
+      <field name="name">manage.domiciliation.view.kanban</field>
+      <field name="model">manage.domiciliation</field>
+      <field name="arch" type="xml">
+        <kanban string="Kanban Description">
+          <field name="referance" />
+          <field name="prix_total" />
+          <templates>
+            <t t-name="kanban-box">
+              <div class="o_project_kanban_main oe_kanban_global_click">
+                <strong class="o_kanban_record_title">
+                  <h3 class="text-success">
+                    <field name="referance" />
+                  </h3>
+                </strong>
+                <strong class="o_kanban_record_title">
+                  <h6 class="">
+                    Date debut:
+                    <field name="Date_debut" />
+                  </h6>
+                </strong>
+                <strong class="o_kanban_record_title">
+                  <h6 class="">
+                    Date fin:
+                    <field name="Date_fin" />
+                  </h6>
+                </strong>
+                <strong class="o_kanban_record_title">
+                  <h4>
+                    <field name="prix_total" />
+                    DHS
+                  </h4>
+                </strong>
+
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <!-- manage.domiciliation calendar view -->
+    <record id="model_name_view_calendar" model="ir.ui.view">
+      <field name="name">manage.domiciliation.view.calendar</field>
+      <field name="model">manage.domiciliation</field>
+      <field name="arch" type="xml">
+        <calendar string="Calendar Description" color="id" date_start="Date_debut" date_stop="Date_fin" mode="month">
+          <field name="client_id" />
+        </calendar>
+      </field>
+    </record>
+    <!-- manage.domiciliation action window -->
+    <record id="manage_domiciliation_action" model="ir.actions.act_window">
+      <field name="name">Domiciliations</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">manage.domiciliation</field>
+      <field name="view_mode">tree,kanban,form,calendar</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p>
+        <p>
+          <!-- More details about what a user can do with this object will be OK -->
+        </p>
+      </field>
+    </record>
+
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem id="manage_menu_root" name="manage" sequence="0" />
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="manage_domiciliation_menu_act" name="Domiciliations" parent="manage_menu_root" action="manage_domiciliation_action" sequence="2" />
+  </data>
+
+
+</odoo>

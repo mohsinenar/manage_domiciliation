@@ -1,0 +1,19 @@
+<odoo>
+	<record 
+        id="paperformat_sale_order_landscape" 
+        model="report.paperformat">
+		<field name="name">A4</field>
+		<field name="format">A4</field>
+		<field name="orientation">Portrait</field>
+        </record>
+        
+	<report 
+        id="action_report_manage_domiciliation_contract" 
+        model="manage.company" 
+        string="Contract Domiciliation (PDF)" 
+        report_type="qweb-pdf" 
+        name="manage.domiciliations_contract_pdf" 
+        file="manage.domiciliations_contract_pdf" 
+        paperformat="paperformat_sale_order_landscape" />
+
+</odoo>
