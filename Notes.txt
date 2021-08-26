@@ -1,0 +1,17 @@
+#menu 
+    - 
+
+#Company 
+    - denomination 
+    - n Ce negative + date 
+    - date debut (inherit from ) + date fin (last)
+    - ICE (primary key) 
+    - IF ()
+    - RC
+    - patente 
+    - numero affilation 
+# Client 
+        Nom	
+        C.I.N	
+        Telephone
+
